@@ -22,8 +22,8 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true,
     },
+    // creating an user instance in the mongoDB
     async (accessToken, refreshToken, profile, done) => {
-      // creating an user instance in the mongoDB
       const existingUser = await User.findOne({ googleId: profile.id });
 
       if (!existingUser) {
@@ -34,7 +34,7 @@ passport.use(
         done(null, user);
       }
 
-      done(null, existingUser);
+      return done(null, existingUser);
     }
   )
 );
