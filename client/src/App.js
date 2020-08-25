@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import axios from "axios";
 
 import * as actions from "../src/redux/auth/auth.actions";
 import { connect } from "react-redux";
