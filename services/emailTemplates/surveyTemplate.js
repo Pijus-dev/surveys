@@ -7,8 +7,8 @@ module.exports = (survey) => {
             <p>Please answer the following answer:</p>
             <p>${survey.body}</p>
              <div>
-              <a href="http://localhost:3000">Yes</a>
-              <a href="">No</a>
+              <a href="http://localhost:3000/api/${survey.id}/yes">Yes</a>
+              <a href="http://localhost:3000/api/${survey.id}/no">No</a>
              </div>
           </div>
       </body>
