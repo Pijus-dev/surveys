@@ -5,12 +5,14 @@ import StripeCheckoutButton from "../stripe/stripe-checkout";
 
 import { Link } from "react-router-dom";
 
+import "./header.scss";
+
 const Header = ({ user }) => {
   return (
-    <nav>
-      <div className="nav-wrapper">
+    <nav className="blue lighten-1">
+      <div className="header">
         <Link className="left brand-logo" to={user ? "/surveys" : "/"}>
-          Surveeys
+          Emailyyy
         </Link>
         <ul className="right">
           <li>{user ? <StripeCheckoutButton /> : null}</li>
@@ -23,6 +25,11 @@ const Header = ({ user }) => {
             ) : (
               <a href="/api/logout">LOGOUT</a>
             )}
+          </li>
+          <li className="home">
+            <Link to="/">
+              <i className="material-icons">home</i>
+            </Link>
           </li>
         </ul>
       </div>
